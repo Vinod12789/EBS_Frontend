@@ -1,0 +1,76 @@
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Login Successfull!!</strong> New Customer Login Successfully
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<div class="masthead bg-primary" style="background-image: url('./assets/images/1.webp');">
+    <div class="color-overlay d-flex align-item-center">
+        <!-- <div class="container"> -->
+   
+        <div>
+        
+            <form [formGroup]="loginForm" (ngSubmit)="logIn()"  class="bg-transparent text-dark" ><br><br>
+                <div class="text-center">
+                    <img src="../assets/images/loginpng.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                      width="100px" alt="profile">
+                  </div>
+                <div class="=row g-0">
+                    <div class="col text-center p-2 mb-3 text-white bg-dark">
+                        <span class="fs-3">Customer Login</span>
+                    </div>
+                </div><br>
+                <div class="row">
+                    
+                    <div class="col mb-3">
+                        <b><label for="email" class="form-label  text-white" [(ngModel)]="user.Email">Email</label></b>
+                        <input type="text" placeholder="Enter your email (Ex- @gmail.com)" class="form-control" id="email" formControlName="email" >
+                        <div class="form-text text-danger" *ngIf="email.errors?.['required'] && (email.touched || email.dirty)">
+                            Email Required 
+                        </div>
+                        <div class="form-text text-danger" *ngIf="email.errors?.['email'] && (email.touched || email.dirty)">
+                            Email is Invalid
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    
+                    <div class="col mb-3">
+                        <b><label for="password" class="form-label  text-white"[(ngModel)]="user.Password">Password</label></b>
+                        <input type="password" placeholder="Enter your password" class="form-control" id="password" formControlName="password" >
+                        <div class="form-text text-danger" *ngIf="password.errors?.['required'] && (password.touched || password.dirty)">
+                            Password Required 
+                        </div>
+                        <div class="form-text text-danger" *ngIf="password.errors?.['minlength'] || password.errors?.['minlength'] && (password.touched || password.dirty)">
+                            Password Should be at least 6 and at the max 15 Characters long
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <br>
+                <div class="row ">
+                    <div class="col-6 offset-3">
+                        <div class="d-grid">
+                            <button type="submit"  class="btn btn-primary" >Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="row ">
+                
+                    <div class="col text-success">
+                       <a routerLink="/register">Not having account register here</a>
+                           
+                    </div>
+                
+                </div>
+            </form>
+            
+        </div>
+      
+</div>
+
+   

@@ -1,0 +1,154 @@
+
+<!-- {{data}}
+<div *ngFor="let user of userData">
+<div *ngIf="user.billId==data">
+<a *ngFor="let cust of custdata">
+  <div *ngIf="user.customerId==cust.customerId">
+    {{cust.customerName}}
+  </div>
+  </a>
+  </div>
+</div> -->
+
+
+
+<br><br>
+<!-- <button class="btn btn-warning" style="margin-left: 1%;" routerLink="/custbills">Back</button> -->
+<!-- <a *ngFor="let pay of paydata">
+  <div *ngIf="pay.billId==data">
+    {{pay.paymentStatus}}
+  </div>
+  </a> -->
+
+<div *ngFor="let user of userData">
+<div *ngIf="user.billId==data">
+<div class="card">
+    <div class="card-body">
+      <div class="container mb-5 mt-3">
+        <div class="row d-flex align-items-baseline">
+          <div class="col-xl-9">
+            <p style="color: #010407;font-size: 20px;">Invoice - <strong>Bill ID:{{user.billId}}</strong></p>
+          </div>
+          <div class="col-xl-3 float-end">
+            
+          </div>
+          <hr>
+        </div>
+  
+        <div class="container">
+          <div class="col-md-12">
+            <div class="text-center">
+              <i class="fab fa-mdb fa-4x ms-0" style="color:#5d9fc5 ;"></i>
+              <strong><p style="color:#000206" class="pt-0">ELECTRICITY BILL</p></strong>
+            </div>
+  
+          </div>
+  
+  
+          <div class="row">
+            <div class="col-xl-8">
+              <ul class="list-unstyled">
+                <li class="text-muted">To: <span style="color:#5d9fc5 ;">
+                  <a *ngFor="let cust of custdata">
+                    <div *ngIf="user.customerId==cust.customerId">
+                      {{cust.customerName}}
+                    </div>
+                    </a>
+                </span></li>
+                <li class="text-muted">
+                  <a *ngFor="let cust of custdata">
+                    <div *ngIf="user.customerId==cust.customerId">
+                      {{cust.customerAddress}}
+                    </div>
+                    </a>
+                </li>
+                
+                <li class="text-muted"><i class="fas fa-phone"></i>
+                  <a *ngFor="let cust of custdata">
+                    <div *ngIf="user.customerId==cust.customerId">
+                      {{cust.customerMobile}}
+                    </div>
+                    </a>
+                </li><br>
+                <li class="text-dark"><i class="fas fa-phone"></i>Enquiries : </li>
+                <li class="text-muted"><i class="fas fa-phone"></i>If you have any queries regarding this invoice or your account in general, please call our Customer Services Help Line On 080-28452213 or email billingCenter@gmail.com</li>
+              </ul>
+            </div>
+            <div class="col-xl-4">
+                
+              <p class="text-muted">Invoice</p>
+              <ul class="list-unstyled">
+                <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                    class="fw-bold">CUST ID:</span>{{user.customerId}}</li>
+                <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                    class="fw-bold">CREATION DATE: </span>Jun 23,2021</li>
+                <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                    class="me-1 fw-bold">STATUS</span><span class="badge bg-warning text-black fw-bold">
+                    <a *ngFor="let pay of paydata">
+                    <div *ngIf="pay.billId==data">
+                      {{pay.paymentStatus}}
+                    </div>
+                    </a></span></li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="row my-2 mx-1 justify-content-center">
+            <table class="table table-striped table-borderless">
+              <thead style="background-color:#7abee5 ;" class="text-white">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Due date</th>
+                  <th scope="col">Units</th>
+                  <th scope="col">Per Unit Price</th>
+                  <th scope="col">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Pro Package</td>
+                  <td>{{user.totalUnits}}</td>
+                  <td>{{user.perUnitCost}}</td>
+                  <td>{{user.billAmount}}</td>
+                </tr>
+               
+              </tbody>
+  
+            </table>
+          </div>
+          <div class="row">
+            <div class="col-xl-8">
+              <p class="ms-3">Add additional notes and payment information</p>
+  
+            </div>
+            <div class="col-xl-3">
+              <ul class="list-unstyled">
+               
+              </ul>
+              <p class="text-black float-start"><span class="text-black me-3">Total Amount</span><span
+                  style="font-size: 25px;">{{user.billAmount}}</span></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xl-10">
+              <p>Thank you for your purchase</p>
+            </div>
+            <div class="col-6 offset-9">
+              <a *ngFor="let pay of paydata">
+                <div *ngIf="pay.paymentStatus==='UnPaid'">
+                  <div *ngIf="pay.billId==data">
+                    <app-payment></app-payment>
+                  </div>
+                </div>
+              </a>
+              <!-- <app-payment></app-payment> -->
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

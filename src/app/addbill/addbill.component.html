@@ -1,0 +1,81 @@
+{{TodayDate}}
+<a *ngFor="let cust of custData">
+    {{cust.customerName}}
+</a>
+<div class="container">
+       
+    <form  [formGroup]="registerform" (ngSubmit)="registerSubmited()" class=" bg-transparent text-dark"><br>
+        <!-- <div class="text-center">
+            <img src="../assets/images/loginpng.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+              width="100px" alt="profile">
+          </div> -->
+         
+        <div class="=row g-0">
+            <div class="col text-center p-2 mb-3 text-dark">
+                <span class="fs-3">Add Bill</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <b><label for="BillGenDate" class="form-label text-white" ></label>BillGendate</b>
+                <input type="date" value="{{TodayDate}}" class="form-control"  id="BillGenDate" formControlName="BillGenDate" >
+             
+            </div>
+            <div class="col mb-3">
+                <b><label for="CustomerId" class="form-label text-white"></label>CustomerId</b>
+                <input type="text" placeholder="Enter Customer Id" class="form-control" id="CustomerId" formControlName="CustomerId" >
+                <!-- <select id="CustomerId" name="customerId" > -->
+
+                    <!-- <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option> -->
+
+                    <!-- <a *ngFor="let cust of custData"> 
+
+                        <option value="CustomerName">{{cust.CustomerName}}</option>
+                    </a> 
+
+                  </select> -->
+              
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <b><label for="PerUnitCost" class="form-label text-white"></label>PerUnitCost</b>
+                <input type="text" placeholder="Enter PerUnitCost" class="form-control" id="PerUnitCost" formControlName="PerUnitCost" >
+            
+            </div>
+            <div class="col mb-3">
+                <b><label for="TotalUnits" class="form-label text-white"></label>TotalUnits</b>
+                <input type="text" placeholder="Enter Total Unit" class="form-control" id="TotalUnits" formControlName="TotalUnits" >
+               
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <b><label for="BillAmount" class="form-label text-white"> </label>BillAmount</b>
+                <input type="text" placeholder="Enter Bill Amount" class="form-control" id="BillAmount" formControlName="BillAmount" >
+                
+            </div>
+            <div class="col mb-3">
+                <b><label for="BillDueDate" class="form-label text-white"></label>BillDueDate</b>
+                <input type="date" placeholder="Enter BillDueDate" class="form-control" id="BillDueDate" formControlName="BillDueDate" >
+               
+            </div>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col-6 offset-3">
+                <div class="d-grid">
+                    <button type="submit"  (click)="replace()" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+        <br>
+    </form>
+    
+      </div>
+ 

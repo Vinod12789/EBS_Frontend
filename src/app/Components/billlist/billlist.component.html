@@ -1,0 +1,58 @@
+<br><br>
+    <div class="h1 text-center"><b>Customer Bills</b></div>
+<br><br>
+<!-- <a *ngIf="user.customerId==10"> -->
+<table border = 1>
+    <tr>
+        <th>Bill ID</th>
+        <th>BillGenDate</th>
+        <th>Customer ID</th>
+        <th>Per Unit Cost</th>
+        <th>Total Units</th>
+        <th>Bill Amount</th>
+        <th>Bill Due Date</th>
+        <th>Delete</th>
+        <!-- <th>Invoice</th>  -->
+
+    </tr>
+
+    <tr *ngFor="let user of userData">
+        <!-- <a *ngIf="user.customerId==10"> -->
+        
+        <td>{{user.billId}}</td>
+
+        <td>{{user.billGenDate}}</td>
+
+        <td>{{user.customerId}}</td>
+
+        <td>{{user.perUnitCost}}</td>
+
+        <td>{{user.totalUnits}}</td>
+
+        <td>{{user.billAmount}}</td>
+
+        <td>{{user.billDueDate}}</td>
+
+       <!-- <td><button class ="btn btn-primary" type="submit" routerLink="/invoice">Invoice</button></td>  -->
+        <!-- </a> -->
+    <!-- </tr> -->
+    <td><a   (click)="deleteData(user.billId)">
+        <span class="material-icons" style="color: rgb(255, 0, 0);"> delete </span>
+      </a></td>
+    
+
+</table>
+<br><br>
+
+    
+    <button class="btn btn-success " style="margin-left: 90%;" (click)="AddBill()" >Add Bill</button>
+
+    <!-- <button class="btn btn-warning " style="margin-left: 1%;" routerLink="/postadminlogincard">Back</button><br><br><br><br><br> -->
+
+    <!-- <button class="btn btn-warning" style="margin-left: 1%;" routerLink="/postadminlogincard">Back</button> -->
+<!-- </a> -->
+<!-- </div> -->
+
+<br><br>
+
+

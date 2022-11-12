@@ -1,0 +1,35 @@
+<br><br>
+    <div class="h1 text-center"><b>Payment List</b></div>
+<br><br>
+<table border = 5>
+    <tr>
+        <th>Payment ID</th>
+        <th>Payment Date</th>
+        <th>Customer ID</th>
+ 
+        <th>Bill Id</th>
+        <th>Payment Status</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    <tr *ngFor="let user of userData">
+        <!-- <div *ngIf="user.CustomerId==10"> -->
+        <td>{{user.paymentId}}</td>
+        <td>{{user.paymentDate}}</td>
+        <td>{{user.customerId}}</td>
+   
+
+        <td>{{user.billId}}</td>
+        <td>{{user.paymentStatus}}</td>
+        <td><a   (click)="deleteData(user.paymentId)">
+            <span class="material-icons" style="color: rgb(255, 0, 0);"> delete </span>
+          </a></td>
+    </tr>
+ 
+</table>
+<br><br>
+<button class="btn btn-success " style="margin-left: 90%;" (click)="AddPayment()" >Add Payment</button>
+
+
+    <!-- <button class="btn btn-danger " style="margin-left: 1%;" routerLink="/postadminlogincard">Back</button> -->
+        <br><br><br><br><br><br><br><br><br><br><br> 

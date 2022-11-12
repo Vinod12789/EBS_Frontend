@@ -1,0 +1,30 @@
+form{
+    width:400px;
+    
+}
+.container{
+    align-items: center;
+    height:100vh;
+    justify-content: center;
+    display: flex;
+    
+}
+.masthead{
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    
+    
+}
+   
+.color-overlay{
+   
+    margin-left: 50%;
+
+    
+}
+.profile-image-pic{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+  }

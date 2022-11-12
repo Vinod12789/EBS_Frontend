@@ -1,0 +1,51 @@
+<div class="container">
+       
+    <form  [formGroup]="registerform" (ngSubmit)="registerSubmited()" class=" bg-transparent text-dark"><br>
+        <!-- <div class="text-center">
+            <img src="../assets/images/loginpng.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+              width="100px" alt="profile">
+          </div> -->
+         
+        <div class="=row g-0">
+            <div class="col text-center p-2 mb-3 text-dark">
+                <span class="fs-3">Add Payment</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <b><label for="PaymentDate" class="form-label text-white" ></label>Payment Date</b>
+                <input type="text" placeholder="Enter your Bill generation Date" class="form-control" id="PaymentDate" formControlName="PaymentDate" >
+             
+            </div>
+            <div class="col mb-3">
+                <b><label for="CustomerId" class="form-label text-white"></label>CustomerId</b>
+                <input type="text" placeholder="Enter Customer Id" class="form-control" id="CustomerId" formControlName="CustomerId" >
+              
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <b><label for="BillId" class="form-label text-white"></label>Bill Id</b>
+                <input type="text" placeholder="Enter PerUnitCost" class="form-control" id="BillId" formControlName="BillId" >
+            
+            </div>
+            <div class="col mb-3">
+                <b><label for="PaymentStatus" class="form-label text-white"></label>Payment Status</b>
+                <input type="text" placeholder="Enter Total Unit" class="form-control" id="PaymentStatus" formControlName="PaymentStatus" >
+               
+                
+            </div>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col-6 offset-3">
+                <div class="d-grid">
+                    <button type="submit" (click)="replace()"  class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+        <br>
+    </form>
+    
+      </div>

@@ -1,0 +1,54 @@
+<!-- {{data}} -->
+<!-- <a *ngFor="let cust of custData">
+    <div *ngIf="cust.customerName==data"> -->
+<br><br>
+    <div class="h1 text-center"><b>My Bills</b></div>
+<br><br>
+
+<div *ngFor="let user of userData">
+<a *ngIf="user.customerId==data">
+<table border = 1>
+    <tr>
+        <th>Bill ID</th>
+        <th>BillGenDate</th>
+        <!-- <th>Customer ID</th> -->
+        <th>Per Unit Cost</th>
+        <th>Total Units</th>
+        <th>Bill Amount</th>
+        <th>Bill Due Date</th>
+        <th>Invoice</th> 
+
+    </tr>
+     
+   <tr>
+        <!-- <a *ngIf="user.customerId==10"> -->
+        
+            <td>{{user.billId}}</td>
+
+        <td>{{user.billGenDate}}</td>
+
+        <!-- <td>{{user.customerId}}</td> -->
+
+        <td>{{user.perUnitCost}}</td>
+
+        <td>{{user.totalUnits}}</td>
+
+        <td>{{user.billAmount}}</td>
+
+        <td>{{user.billDueDate}}</td>
+
+        <div><button style="margin-left: 30px; margin-top:10px;" class="btn btn-sm btn-warning" type="submit" (click)="SaveData(user.billId);" >Invoice</button></div>
+        </tr>
+    
+
+</table>
+</a>
+</div>
+<br><br>
+
+    <!-- <button class="btn btn-danger " style="margin-left: 1%;" (click)="SaveData(data)" >Back</button> -->
+    <br><br><br><br><br><br><br><br><br>
+
+<!-- </div> -->
+
+

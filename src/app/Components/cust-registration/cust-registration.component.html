@@ -1,0 +1,53 @@
+
+<div class="masthead bg-primary" style="background-image: url('./assets/images/1.webp');">
+    <div class="container">
+     <form #simpleform="ngForm" (ngSubmit)="postcustdata(simpleform.value)" class=" bg-transparent text-dark">
+        <div class="text-center">
+            <img src="../assets/images/loginpng.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+              width="100px" alt="profile">
+          </div>
+        <div class="=row g-0">
+            <div class="col text-center p-2 mb-3 text-white bg-dark">
+                <span class="fs-3">Customer Registration</span>
+            </div>
+        </div>
+    <div class="row">
+       <div class="col mb-3">
+         <input type = "text" name = "CustomerName" ngModel placeholder="Enter your name" required=""><br><br>
+       </div>
+        <div class="col mb-3">
+          <input type = "text" name = "CustomerEmail" ngModel placeholder="Enter your email" required=""><br><br>
+        </div>
+    </div>   
+    <div class="row">
+        <div class="col mb-3">
+          <input type = "int" name = "CustomerMobile" ngModel placeholder="Enter your Mobile Number" required=""><br><br>
+        </div>
+         <div class="col mb-3">
+          <input type = "text" name = "CustomerAddress" ngModel placeholder="Enter your Address" required=""><br><br>
+         </div>
+         </div>
+     <div class="row">
+        <div class="col mb-3">
+            <input type = "password" name = "CustomerPassword" ngModel placeholder="Enter your Password" required=""><br><br>
+         </div>
+     </div> 
+     <div class="row ">
+        <div class="col-6 offset-3">
+            <div class="d-grid">
+                <button type="submit"  class="btn btn-primary" routerLink="/postlogincustomer">Submit</button>
+            </div>
+        </div>
+    </div>
+    <br>
+   
+    
+
+     <div class="form-footer">
+        <div class="btn btn-outline-success" routerLink=''>Go Back </div><br><br>
+         Already have an account <a routerLink="/login">Click Here</a>
+      </div>
+
+     </form>
+    </div>
+</div>

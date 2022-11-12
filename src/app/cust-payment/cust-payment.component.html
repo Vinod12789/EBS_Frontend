@@ -1,0 +1,35 @@
+<br><br>
+    <div class="h1 text-center"><b>Payment History</b></div>
+<br><br>
+<div *ngFor="let user of userData">
+<div *ngIf="user.customerId==data">
+<table border = 5>
+    <tr>
+        <!-- <th>Payment ID</th> -->
+        <th>Payment Date</th>
+        <!-- <th>Customer ID</th> -->
+ 
+        <th>Bill Id</th>
+        <th>Payment Status</th>
+    </tr>
+    <tr>
+        
+        <!-- <td>{{user.paymentId}}</td> -->
+        <td>{{user.paymentDate}}</td>
+        <!-- <td>{{user.customerId}}</td> -->
+   
+
+        <td>{{user.billId}}</td>
+        <td>{{user.paymentStatus}}</td>
+        
+    </tr>
+ 
+</table>
+</div>
+</div>
+<br><br>
+
+    <!-- <button class="btn btn-warning " style="margin-left: 1%;" (click)="SaveData(data);">Back</button> -->
+    <br><br><br><br><br>
+<!-- </div>
+</a> -->

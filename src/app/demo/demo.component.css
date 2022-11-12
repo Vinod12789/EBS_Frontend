@@ -1,0 +1,3 @@
+form{ width:500px; } 
+.container{ align-items: center; height:90vh; justify-content: center; display: flex; margin-left: 30%; } 
+.masthead{ background-size: cover; min-height: 100vh; position: relative; }
