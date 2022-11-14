@@ -1,7 +1,4 @@
-{{TodayDate}}
-<a *ngFor="let cust of custData">
-    {{cust.customerName}}
-</a>
+
 <div class="container">
        
     <form  [formGroup]="registerform" (ngSubmit)="registerSubmited()" class=" bg-transparent text-dark"><br>
@@ -16,15 +13,39 @@
             </div>
         </div>
         <div class="row">
+
+      <div class="form-group">
+
+          <!-- <label for="date">Date</label><br>
+
+          <input type="date" name="date" class = "form-control"formControlName="date"> -->
+
+      </div>
             <div class="col mb-3">
                 <b><label for="BillGenDate" class="form-label text-white" ></label>BillGendate</b>
-                <input type="date" value="{{TodayDate}}" class="form-control"  id="BillGenDate" formControlName="BillGenDate" >
+                <input type="date" class="form-control"  name="BillGenDate" formControlName="BillGenDate" >
              
             </div>
+            <!-- <div class="col mb-3">
+                <b><label for="CustomerId" class="form-label text-white"></label></b>
+                <select name="Customer" formControlName="CustomerId" >
+                 <option>-Select Customer-</option> -->
+                <!-- <option *ngFor="let b of custData"> -->
+                    <!-- {{b.customer}} -->
+                <!-- </option> -->
+                <!-- </select> -->
+                
+            <!-- </div> -->
             <div class="col mb-3">
-                <b><label for="CustomerId" class="form-label text-white"></label>CustomerId</b>
-                <input type="text" placeholder="Enter Customer Id" class="form-control" id="CustomerId" formControlName="CustomerId" >
-                <!-- <select id="CustomerId" name="customerId" > -->
+                <b><label for="CustomerId" class="form-label text-white"></label>Customer Id</b>
+                <select name="CustomerId" 
+                formControlName="CustomerId">
+                <option>-Select Customer-</option>
+                <option *ngFor="let b of custData">
+                    {{b.customerId}}
+                </option>
+                </select>
+                <!--<select id="CustomerId" name="customerId" > -->
 
                     <!-- <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Customer } from 'src/customer.model';
+import { UserdataService } from 'src/app/userdata.service';
 
 @Component({
   selector: 'app-addcust',
@@ -10,8 +12,9 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 })
 export class AddcustComponent implements OnInit {
 
-  constructor(private authService: AuthService,public dailog:MatDialogRef<AddcustComponent>) { }
-  
+  constructor(private authService: AuthService,public dailog:MatDialogRef<AddcustComponent>, private userDataService: UserdataService) { }
+  cusdata: any=[];
+  logindata: any=[];
   ngOnInit(): void {
   }
   registerform= new FormGroup({
@@ -37,10 +40,19 @@ export class AddcustComponent implements OnInit {
       //   this.displayMsg = 'Account Created Successfully!';
       //   this.isAccountCreated=true;
       // }
-      
+      this.cusdata = res;
      })
- }
+     console.log(this.cusdata);
+    
 
+ }
+// sendMail(Cus: Customer){
+//   return this.userDataService.MailCustomer(Cus.customerEmail).subscribe(res=>{
+//     this.logindata= res;
+//     console.log("MAil");
+//   })
+
+// }
 get name(): FormControl{
   return this.registerform.get("CustomerName") as FormControl;
  }

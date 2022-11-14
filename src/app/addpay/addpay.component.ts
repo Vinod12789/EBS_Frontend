@@ -2,15 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../auth.service';
+import { UserdataService } from '../userdata.service';
+import {distinct} from 'rxjs/operators';
+import { Bill } from '../bill.model';
+
 
 @Component({
   selector: 'app-addpay',
   templateUrl: './addpay.component.html',
   styleUrls: ['./addpay.component.css']
 })
+
 export class AddpayComponent implements OnInit {
 
-  constructor(private authService: AuthService,public dailog:MatDialogRef<AddpayComponent>) { }
+  constructor(private authService: AuthService,public dailog:MatDialogRef<AddpayComponent>, private userDataService: UserdataService) {
+    this.userDataService.getBillData().subscribe(res=>{
+      this.custData=res;
+    })
+    this.userDataService.getCustData().subscribe(data=>{
+      this.custData1 = data
+    })
+   }
 
   ngOnInit(): void {
   }
@@ -22,6 +34,9 @@ export class AddpayComponent implements OnInit {
     PaymentStatus: new FormControl("",[Validators.required])
     
  });
+
+ custData:any=[];
+ custData1: any=[];
 
  registerSubmited(){
      this.authService.registerPay([

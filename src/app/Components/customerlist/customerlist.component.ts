@@ -62,6 +62,7 @@ delData(id: number){
   })
 }
 deleteData(id: number){
+  
   this.deleteServiceService.confirm('Please confirm..', 'Do you really want to ... ?')
       .then((confirmed) => 
       {

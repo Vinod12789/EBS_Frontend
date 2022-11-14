@@ -31,8 +31,8 @@
     </form> -->
     {{data}}
     <div *ngFor="let cust of custData">
-      <div *ngIf="cust.customerId==data">
-          <a>{{cust.customerName}}</a>
+      <div *ngIf="data==cust.customerId">
+          <p>{{cust.customerName}}</p>
       </div>
     </div>
     <form [formGroup]="profileForm"  >
@@ -88,8 +88,20 @@
       </div>
 
       <pre></pre>
+      <pre></pre>
 
-      <button class="btn btn-primary" (click)="submit()" type="submit">Submit</button>
+      <!-- <div class="form-group">
+
+          <label for="date">Date</label><br>
+
+          <input type="date" name="date" class = "form-control"formControlName="date">
+
+      </div> -->
+
+      <pre></pre>
+
+      <button class="btn btn-primary" (click)="submit()" type="submit">Fetch</button>
+      <button class="btn btn-primary" (click)="updateSubmited(data)" type="submit">Update</button>
 
   
 
@@ -102,13 +114,13 @@
   <p>
     Display value: {{email.value}}
   </p>
-  <button (click)="update()">update</button>
+  <button (click)="update()">update</button>-->
 
-  <label>
+  <!-- <label>
     Enter date:
     <input type="date" [formControl]="date">
-  </label>
-    <p>
+  </label> -->
+    <!-- <p>
       Display value: {{date.value}}
     </p>
-    <button (click)="updatedate()">updatedate</button> -->
+    <button (click)="updatedate()">updatedate</button>  -->

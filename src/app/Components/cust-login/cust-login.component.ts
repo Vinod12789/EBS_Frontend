@@ -128,8 +128,13 @@ public i:any=0;
        console.log(this.loginform.value.email, this.loginform.value.password);
        alert("Login successful !");
        this.senddata(this.loginform.value.email);
+       console.log(this.loginform.value.email);
+      //  this.sendMail(this.loginform.value.email);
        this.loginform.reset({})
       this.i++;
+    
+      
+      
       }}
       // else{
       //   // alert("Login Unsuccessful !");
@@ -145,7 +150,14 @@ if(this.i==0){
       //   this.loginform.reset({})
       //   continue
       // }
+    
       }
+      // sendMail(cus: any){
+      //   return this.userdataservice.MailCustomer(this.loginform.value.email).subscribe(res=>{
+      //     this.custData= res;
+      //     console.log("MAil");
+      //   })
+      // }
 
       get email(): FormControl{
         return this.loginform.get("email") as FormControl;

@@ -11,15 +11,16 @@ import { UserdataService } from '../userdata.service';
 })
 export class AddbillComponent implements OnInit {
     
-
+  TodayDate="";
+  DueDate="";
   date1 = new Date();
   currentYear = this.date1.getUTCFullYear();
-  currentMonth = this.date1.getUTCMonth() +1;
+  currentMonth = this.date1.getUTCMonth() + 1;
   currentDay = this.date1.getUTCDate();
-  finalMonth :any;
-  finalDay : any;
+  FinalMonth:any;
+  FinalDay:any;
 
-  TodayDate="";
+  
   custData:any=[];
   constructor(private userdataservice:UserdataService,private authService: AuthService,public dailogRef:MatDialogRef<AddbillComponent>, private formBuilder: FormBuilder) { 
     this.userdataservice.getCustData().subscribe(data=>{
@@ -27,29 +28,9 @@ export class AddbillComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-
-    if(this.currentMonth<10){
-      this.finalMonth = "0"+ this.currentMonth;
-    }else{
-      this.finalMonth=this.currentMonth;
-    }
-
-    if(this.currentDay<10){
-      this.finalDay = "0"+ this.currentDay;
-    }else{
-      this.finalDay=this.currentDay;
-    }
-
-    this.TodayDate = this.currentYear+ "-" +this.finalMonth+"-" + this.finalDay;
-
-
-
-    
-
-  }
+  
   registerform= new FormGroup({
-    BillGenDate: new FormControl(this.TodayDate),
+    BillGenDate: new FormControl(),
     CustomerId: new FormControl("",[Validators.required ]),
     PerUnitCost: new FormControl("",[Validators.required]),
     TotalUnits: new FormControl("",[Validators.required]),
@@ -73,7 +54,8 @@ export class AddbillComponent implements OnInit {
       // }
       
      })
-     
+     window.location.reload();
+    
  }
 
  
@@ -81,7 +63,7 @@ export class AddbillComponent implements OnInit {
 get BillGenDate(): FormControl{
   return this.registerform.get("BillGenDate") as FormControl;
  }
- get CustomerId(): FormControl{
+ get CustomerName(): FormControl{
   return this.registerform.get("CustomerId") as FormControl;
  }
  get PerUnitCost(): FormControl{
@@ -99,5 +81,34 @@ get BillGenDate(): FormControl{
 
  replace(){
   location.replace("billlist");
+}
+
+ngOnInit(): void {
+
+  if(this.currentMonth<10)
+        {
+          this.FinalMonth = "0" + this.currentMonth;
+        }
+        else{
+          this.FinalMonth = this.currentMonth;
+        }
+        if(this.currentDay<10)
+        {
+          this.FinalDay = "0" + this.currentDay;
+        }
+        else{
+          this.FinalDay = this.currentDay;
+        }
+        this.TodayDate = this.currentYear + "-" + this.currentMonth + "-" + (this.currentDay)
+        this.DueDate = this.currentYear + "-" + this.currentMonth + "-" + (this.currentDay + 5)
+        
+  this.registerform.setValue({
+    BillGenDate : this.TodayDate,
+    CustomerId:'',
+    PerUnitCost:'',
+    TotalUnits:'',
+    BillAmount:'',
+    BillDueDate:this.DueDate
+  }); 
 }
 }

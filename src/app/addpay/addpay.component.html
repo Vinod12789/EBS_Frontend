@@ -19,15 +19,27 @@
             </div>
             <div class="col mb-3">
                 <b><label for="CustomerId" class="form-label text-white"></label>CustomerId</b>
-                <input type="text" placeholder="Enter Customer Id" class="form-control" id="CustomerId" formControlName="CustomerId" >
-              
+                
+                <select name="CustomerId" 
+                formControlName="CustomerId">
+                <option>-Select Customer-</option>
+                <option *ngFor="let b of custData1">
+                    {{b.customerId}}
+                </option>
+                </select>
                 
             </div>
         </div>
         <div class="row">
             <div class="col mb-3">
                 <b><label for="BillId" class="form-label text-white"></label>Bill Id</b>
-                <input type="text" placeholder="Enter PerUnitCost" class="form-control" id="BillId" formControlName="BillId" >
+                <select name="CustomerId" 
+                formControlName="CustomerId">
+                <option>-Select BillId-</option>
+                <option *ngFor="let b of custData">
+                    {{b.billId}}
+                </option>
+                </select>
             
             </div>
             <div class="col mb-3">

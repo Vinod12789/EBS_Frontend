@@ -23,6 +23,17 @@ export class AuthService {
    });
   }
 
+  UpdateCustomer(id:number, Customer:Array<any>){
+    return  this.http.put<any>("http://localhost:5003/api/Customers/"+id,{
+     customerName:Customer[0],
+     customerEmail:Customer[1],
+     customerMobile:Customer[2],
+ 
+     customerAddress:Customer[3],
+     customerPassword:Customer[4]
+     
+    });
+   }
   registerCust(Customer : Array<any>){
     return  this.http.post<any>("http://localhost:5003/api/Customers",{
      CustomerName:Customer[0],

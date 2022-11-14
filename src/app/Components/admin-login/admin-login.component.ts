@@ -43,7 +43,7 @@ export class AdminLoginComponent implements OnInit {
   return this.loginform.get("password") as FormControl;
  }
  validateUSer(){
-  debugger;
+  
   this.login=this.loginform.value;
   if( this.login.email=="admin@gmail.com"&&this.login.password=="admin@123")
     {

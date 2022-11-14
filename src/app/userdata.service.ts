@@ -16,6 +16,15 @@ export class UserdataService {
     return this.http.get<Bill[]>(apiurl);
 
   }
+  MailCustomer(cus: Customer){
+    let apiurl=("http://localhost:5003/api/Email");
+    return this.http.post(apiurl, cus);
+     
+   }
+  sendEmail(cus: Customer){
+    let apiurl="http://localhost:3000/sendmail/?name&email"
+    return this.http.post(apiurl,cus);
+  }
   getBillData(){
     let apiurl="http://localhost:5003/api/Bills";
     return this.http.get(apiurl);
@@ -40,12 +49,12 @@ export class UserdataService {
     let apiurl="http://localhost:5003/api/Payments/"+id;
     return this.http.delete(apiurl);
   }
-  getCurrentData(id:number){
+  getCurrentData(id: number){
     let apiurl="http://localhost:5003/api/Customers/"+id;
-    return this.http.get(apiurl);
+    return this.http.get<Customer>(apiurl);
   }
   updateData(cus: Customer){
     let apiurl="http://localhost:5003/api/Customers/"+cus.customerId;
-     return this.http.put<Customer>(apiurl, cus);
+     return this.http.put<Customer>(apiurl , cus);
   }
 }
