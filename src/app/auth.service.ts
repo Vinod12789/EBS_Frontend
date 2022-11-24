@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   registerCustomer(Customer : Array<any>){
-   return  this.http.post<any>("http://localhost:5003/api/Customers",{
+   return  this.http.post<any>("https://electricitysystem.azurewebsites.net/api/Customers",{
     customerName:Customer[0],
     customerEmail:Customer[1],
     customerMobile:Customer[2],
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   UpdateCustomer(id:number, Customer:Array<any>){
-    return  this.http.put<any>("http://localhost:5003/api/Customers/"+id,{
+    return  this.http.put<any>("https://electricitysystem.azurewebsites.net/api/Customers/"+id,{
      customerName:Customer[0],
      customerEmail:Customer[1],
      customerMobile:Customer[2],
@@ -35,7 +35,7 @@ export class AuthService {
     });
    }
   registerCust(Customer : Array<any>){
-    return  this.http.post<any>("http://localhost:5003/api/Customers",{
+    return  this.http.post<any>("https://electricitysystem.azurewebsites.net/api/Customers",{
      CustomerName:Customer[0],
      CustomerEmail:Customer[1],
      CustomerMobile:Customer[2],
@@ -48,7 +48,7 @@ export class AuthService {
 
 
   registerBill(Bill :Array<any>){
-    return  this.http.post<any>("http://localhost:5003/api/Bills",{
+    return  this.http.post<any>("https://electricitysystem.azurewebsites.net/api/Bills",{
     BillGenDate:Bill[0],
     CustomerId:Bill[1],
     PerUnitCost:Bill[2],
@@ -60,7 +60,7 @@ export class AuthService {
 
   registerPay(Bill :Array<any>)
   {
-    return  this.http.post<any>("http://localhost:5003/api/Payments",{
+    return  this.http.post<any>("https://electricitysystem.azurewebsites.net/api/Payments",{
     PaymentDate:Bill[0],
     CustomerId:Bill[1],
     BillId:Bill[2],
@@ -83,7 +83,7 @@ export class AuthService {
 
 
   login(user: User):Observable<any>{
-    return this.http.post<any>('http://localhost:5003/api/Auth/Login', user);
+    return this.http.post<any>('https://electricitysystem.azurewebsites.net/api/Auth/Login', user);
    }
 
 

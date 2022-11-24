@@ -11,13 +11,13 @@ export class UserdataService {
 
   constructor(private http:HttpClient) { }
   getUserData():Observable<Bill[]>{
-    let apiurl="http://localhost:5003/api/Bills";
+    let apiurl="https://electricitysystem.azurewebsites.net/api/Bills";
 
     return this.http.get<Bill[]>(apiurl);
 
   }
   MailCustomer(cus: Customer){
-    let apiurl=("http://localhost:5003/api/Email");
+    let apiurl=("https://electricitysystem.azurewebsites.net/api/Email");
     return this.http.post(apiurl, cus);
      
    }
@@ -26,35 +26,35 @@ export class UserdataService {
     return this.http.post(apiurl,cus);
   }
   getBillData(){
-    let apiurl="http://localhost:5003/api/Bills";
+    let apiurl="https://electricitysystem.azurewebsites.net/api/Bills";
     return this.http.get(apiurl);
   }
   getCustData(){
-    let apiurl="http://localhost:5003/api/Customers";
+    let apiurl="https://electricitysystem.azurewebsites.net/api/Customers";
     return this.http.get(apiurl);
   }
   getPaymentData(){
-    let apiurl="http://localhost:5003/api/Payments";
+    let apiurl="https://electricitysystem.azurewebsites.net/api/Payment";
     return this.http.get(apiurl);
   }
   deleteCustData(id: number){
-    let apiurl="http://localhost:5003/api/Customers/"+id;
+    let apiurl="https://electricitysystem.azurewebsites.net/api/Customers/"+id;
     return this.http.delete(apiurl);
   }
   deleteBillData(id: number){
-    let apiurl="http://localhost:5003/api/Bills/"+id;
+    let apiurl="https://electricitysystem.azurewebsites.net/api/Bills/"+id;
     return this.http.delete(apiurl);
   }
   deletePayData(id: number){
-    let apiurl="http://localhost:5003/api/Payments/"+id;
+    let apiurl="https://electricitysystem.azurewebsites.net/api/Payment/"+id;
     return this.http.delete(apiurl);
   }
   getCurrentData(id: number){
-    let apiurl="http://localhost:5003/api/Customers/"+id;
+    let apiurl="https://electricitysystem.azurewebsites.net/api/Customers/"+id;
     return this.http.get<Customer>(apiurl);
   }
   updateData(cus: Customer){
-    let apiurl="http://localhost:5003/api/Customers/"+cus.customerId;
+    let apiurl="https://electricitysystem.azurewebsites.net/api/Customers/"+cus.customerId;
      return this.http.put<Customer>(apiurl , cus);
   }
 }
