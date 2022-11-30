@@ -29,7 +29,7 @@
     "zone.js": "~0.11.4"
   },
   "build": {
-    "aot": "false"
+    "aot": "true"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.2",
